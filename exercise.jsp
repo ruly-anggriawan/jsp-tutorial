@@ -1,25 +1,22 @@
-<%@ page import="java.util.*" %>
+
 <html>
   <body>
-    <%!
-      Date theDate = new Date();
-      Date getDate(){
-        System.out.println("inside getDate() method");
-        return theDate;
-      }
 
-      void computeDate(){
-        System.out.println("re compute date");
-        theDate = new Date();
-      }
-
-    %>
-
+    include name.jsp
     <%
-    computeDate();
+    Boolean isForward = false;
+    if(isForward){
+      %>
+      <jsp:forward page="forward.jsp"/>
+      <%
+    }else{
+      %>
+        <jsp:include page="name.jsp"/>
+      <%
+    }
     %>
 
-    Hello the time is <%= getDate() %>
+
 
   </body>
 </html>

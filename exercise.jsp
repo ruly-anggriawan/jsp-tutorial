@@ -7,6 +7,8 @@
     Hello! The time is now
     <%
       out.println(String.valueOf(date));
+      out.println("<br> Your machine's address is ");
+      out.println(request.getRemoteHost());
     %>
 
   </body>

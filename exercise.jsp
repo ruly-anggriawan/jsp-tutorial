@@ -1,13 +1,41 @@
 <html>
+
   <body>
     <%
-      System.out.println("Evaluating Date Now");
-      java.util.Date date = new java.util.Date();
-      out.print("<h3>Hello! The time is now ".concat(String.valueOf(date)).concat("</h3>"));
-      out.println("<br> Your machine's address is ");
-      out.println(request.getRemoteHost());
-      response.sendRedirect("http://www.detik.com/");
+      int n = 5;
+      Boolean hello = false;
+    %>
+
+    <table border="2">
+      <%
+        for(int i=0;i<n;i++){
+      %>
+        <tr>
+          <td>Number</td>
+          <td>
+            <%= String.valueOf(i) %>
+          </td>
+
+        </tr>
+      <%
+        }
+      %>
+    </table>
+
+    <%
+      if(hello){
+    %>
+      <p>Hello World!</p>
+      <br><%= System.getProperty("os.name") %>
+    <%
+  }else{
+    %>
+      <p>Good Bye</p>
+      <br><%= System.getProperty("os.name") %>
+    <%
+  }
     %>
 
   </body>
+
 </html>
